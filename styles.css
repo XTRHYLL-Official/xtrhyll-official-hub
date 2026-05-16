@@ -1,0 +1,623 @@
+:root {
+  --page-bg: #ffffff;
+  --card-bg: #050511;
+  --footer-bg: #050a0f;
+
+  --text: #ffffff;
+  --button: #9aa1aa;
+
+  --cyan: #00e7f0;
+  --pink: #ff1aa8;
+  --purple: #8d5cff;
+
+  --card-width: 684px;
+  --mobile-width: 390px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--page-bg);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ÁREA BRANCA DO CARD */
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 70px;
+  padding-bottom: 0;
+
+  min-height: unset;
+  height: auto;
+  flex: none;
+
+  background: var(--page-bg);
+}
+
+/* CARD PRINCIPAL */
+
+.business-card {
+  width: min(var(--card-width), calc(100vw - 32px));
+  background: var(--card-bg);
+  overflow: hidden;
+  border-radius: 22px 22px 0 0;
+  margin: 0;
+}
+
+/* HERO / BANNER */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 318px;
+  overflow: hidden;
+  border-radius: 22px 22px 0 0;
+}
+
+.hero-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ÍCONE DO CANTO SUPERIOR */
+
+.share-button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  width: 28px;
+  height: 28px;
+
+  display: grid;
+  place-items: center;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  padding: 0;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.share-button img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+/* FAIXA DOS SELOS */
+
+.ecosystem-strip {
+  position: relative;
+  height: 74px;
+
+  display: flex;
+  align-items: flex-start;
+
+  padding-left: 28px;
+}
+
+.brand-badges {
+  display: flex;
+  gap: 10px;
+
+  transform: translateY(-45px);
+  z-index: 3;
+}
+
+.badge {
+  width: 78px;
+  height: 78px;
+
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: #090816;
+  overflow: hidden;
+
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.badge:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.15);
+}
+
+.badge-light {
+  background: #ffffff;
+}
+
+.badge img {
+  width: 97%;
+  height: 97%;
+  object-fit: contain;
+}
+
+.hub-line {
+  position: absolute;
+  top: 0;
+  left: 260px;
+  right: 0;
+
+  height: 2px;
+  background: var(--cyan);
+  z-index: 1;
+}
+
+.hub-line span {
+  position: absolute;
+  top: -18px;
+  left: 18px;
+
+  color: var(--cyan);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* SOBRE */
+
+.about {
+  width: 100%;
+  padding: 56px 92px 0;
+}
+
+.wordmark {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+  margin-left: -12px;
+}
+
+.about-text {
+  font-size: 0.95rem;
+  line-height: 1.26;
+  color: var(--text);
+}
+
+.about-text p {
+  margin-bottom: 22px;
+}
+
+.about-text .mission {
+  max-width: 500px;
+  margin: 26px auto 0;
+
+  text-align: center;
+
+  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ASSINATURA */
+
+.signature {
+  margin-top: 54px;
+
+  text-align: center;
+
+  font-size: 0.95rem;
+  letter-spacing: 0.42em;
+  font-weight: 700;
+}
+
+.signature span:nth-of-type(1) {
+  color: var(--cyan);
+}
+
+.signature span:nth-of-type(2) {
+  color: var(--purple);
+}
+
+.signature span:nth-of-type(3) {
+  color: var(--pink);
+}
+
+.signature b {
+  color: white;
+  letter-spacing: 0;
+}
+
+/* CONNECT */
+
+.connect {
+  margin-top: 76px;
+  text-align: center;
+  padding: 0 82px;
+}
+
+.connect h2,
+.channels h2 {
+  font-size: 0.95rem;
+  letter-spacing: 0.52em;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact-buttons {
+  margin-top: 28px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.contact-button {
+  height: 48px;
+  border-radius: 6px;
+
+  background: var(--button);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.contact-button img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+/* CANAIS OFICIAIS */
+
+.channels {
+  margin-top: 96px;
+  padding-left: 40px;
+  padding-bottom: 70px;
+}
+
+.channels h2 {
+  text-align: left;
+  font-size: 0.80rem;
+  letter-spacing: 0.50em;
+}
+
+.social-buttons {
+  margin-top: 20px;
+
+  display: flex;
+  gap: 8px;
+}
+
+.social-buttons a {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 6px;
+  background: var(--button);
+
+  display: grid;
+  place-items: center;
+
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-buttons a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.social-buttons img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* RODAPÉ FULL WIDTH */
+
+.footer {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 12px;
+
+  background: var(--footer-bg);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gradient-line {
+  width: 100%;
+  height: 5px;
+
+  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
+}
+
+.footer-logo {
+  width: 300px;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+.footer p {
+  margin-top: 4px;
+
+  font-size: 0.58rem;
+  font-weight: 700;
+
+  display: inline-block;
+
+  background: linear-gradient(
+    90deg,
+    var(--cyan) 0%,
+    var(--purple) 48%,
+    var(--pink) 100%
+  );
+
+  background-size: 220% 100%;
+  background-position: center;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* AJUSTE DESKTOP - HUB LINE */
+@media (min-width: 721px) {
+  .hub-line {
+    left: 78px;
+  }
+
+  .hub-line span {
+    top: -18px;
+    left: 210px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+  .page {
+    padding-top: 32px;
+    padding-bottom: 0;
+
+    min-height: unset;
+    height: auto;
+    flex: none;
+  }
+
+  .business-card {
+    width: min(var(--mobile-width), calc(100vw - 48px));
+    border-radius: 16px 16px 0 0;
+    margin: 0;
+  }
+
+  .hero {
+    height: 168px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .hero-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .share-button {
+    top: 10px;
+    right: 10px;
+
+    width: 22px;
+    height: 22px;
+}
+
+  .share-button img {
+    width: 18px;
+    height: 18px;
+}
+
+  .ecosystem-strip {
+    height: 48px;
+    padding-left: 16px;
+  }
+
+  .brand-badges {
+    gap: 6px;
+    transform: translateY(-28px);
+  }
+
+  .badge {
+    width: 48px;
+    height: 48px;
+    border-width: 1.5px;
+  }
+
+  .hub-line {
+    left: 48px;
+  }
+
+  .hub-line span {
+    top: -13px;
+    left: 130px;
+
+    font-size: 0.48rem;
+    white-space: nowrap;
+  }
+
+  .about {
+    padding: 40px 46px 0;
+  }
+
+  .wordmark {
+    width: 150px;
+    margin-bottom: 5px;
+    margin-left: -7px;
+  }
+
+  .about-text {
+    font-size: 0.58rem;
+    line-height: 1.22;
+  }
+
+  .about-text p {
+    margin-bottom: 16px;
+  }
+
+  .about-text .mission {
+    margin-top: 20px;
+  }
+
+  .signature {
+    margin-top: 30px;
+
+    font-size: 0.58rem;
+    letter-spacing: 0.38em;
+  }
+
+  .connect {
+    margin-top: 44px;
+    padding: 0 46px;
+  }
+
+  .connect h2,
+  .channels h2 {
+    font-size: 0.58rem;
+    letter-spacing: 0.55em;
+  }
+
+  .contact-buttons {
+    margin-top: 20px;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .contact-button {
+    height: 34px;
+    border-radius: 4px;
+    gap: 7px;
+
+    font-size: 0.58rem;
+  }
+
+  .contact-button img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .channels {
+    margin-top: 58px;
+    padding-left: 28px;
+    padding-bottom: 38px;
+  }
+
+  .social-buttons {
+    margin-top: 10px;
+    gap: 6px;
+  }
+
+  .social-buttons a {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+  }
+
+  .social-buttons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer {
+    padding-bottom: 12px;    
+  }
+
+  .gradient-line {
+    height: 3px;
+  }
+
+  .footer-logo {
+    width: 165px;
+    margin-top: 10px;
+    opacity: 0.95;
+    display: block;
+  }
+
+  .footer p {
+    font-size: 0.40rem;
+    margin-top: 4px;
+  }
+}
+
+/* CELULARES MUITO ESTREITOS */
+
+@media (max-width: 380px) {
+  .business-card {
+    width: calc(100vw - 24px);
+  }
+
+  .about {
+    padding-inline: 34px;
+  }
+
+  .connect {
+    padding-inline: 34px;
+  }
+
+  .contact-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .channels {
+    margin-top: 48px;
+  }
+}
